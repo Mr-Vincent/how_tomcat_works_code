@@ -39,7 +39,6 @@ import org.apache.catalina.util.RequestUtil;
  *
  * @author Craig R. McClanahan
  * @version $Revision: 1.39 $ $Date: 2002/04/22 00:00:50 $
- * @deprecated
  */
 
 public class HttpRequestBase

@@ -39,7 +39,6 @@ import org.apache.catalina.util.URL;
  * @author Craig R. McClanahan
  * @author Remy Maucherat
  * @version $Revision: 1.54 $ $Date: 2002/04/05 18:43:12 $
- * @deprecated
  */
 
 public class HttpResponseBase

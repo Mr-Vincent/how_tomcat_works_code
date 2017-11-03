@@ -33,7 +33,6 @@ import org.apache.catalina.util.StringManager;
  * @author Craig R. McClanahan
  * @author Remy Maucherat
  * @version $Revision: 1.34 $ $Date: 2002/03/18 07:15:39 $
- * @deprecated
  */
 
 public final class HttpConnector implements Connector, Lifecycle, Runnable {
@@ -720,22 +719,22 @@ public final class HttpConnector implements Connector, Lifecycle, Runnable {
 
 		synchronized (processors) {
 			if (processors.size() > 0) {
-				// if (debug >= 2)
-				// log("createProcessor: Reusing existing processor");
+				if (debug >= 2)
+					log("createProcessor: Reusing existing processor");
 				return ((HttpProcessor) processors.pop());
 			}
 			if ((maxProcessors > 0) && (curProcessors < maxProcessors)) {
-				// if (debug >= 2)
-				// log("createProcessor: Creating new processor");
+				if (debug >= 2)
+					log("createProcessor: Creating new processor");
 				return (newProcessor());
 			} else {
 				if (maxProcessors < 0) {
-					// if (debug >= 2)
-					// log("createProcessor: Creating new processor");
+					if (debug >= 2)
+						log("createProcessor: Creating new processor");
 					return (newProcessor());
 				} else {
-					// if (debug >= 2)
-					// log("createProcessor: Cannot create new processor");
+					if (debug >= 2)
+						log("createProcessor: Cannot create new processor");
 					return (null);
 				}
 			}
@@ -878,8 +877,8 @@ public final class HttpConnector implements Connector, Lifecycle, Runnable {
 				if (debug >= 3)
 					log("run: Waiting on serverSocket.accept()");
 				socket = serverSocket.accept();
-				// if (debug >= 3)
-				// log("run: Returned from serverSocket.accept()");
+				if (debug >= 3)
+					log("run: Returned from serverSocket.accept()");
 				if (connectionTimeout > 0)
 					socket.setSoTimeout(connectionTimeout);
 				socket.setTcpNoDelay(tcpNoDelay);
@@ -929,6 +928,7 @@ public final class HttpConnector implements Connector, Lifecycle, Runnable {
 			}
 
 			// Hand this socket off to an appropriate processor
+			// 先中栈中取，为空就直接创建，新创建的添加到created这个数据结构中；栈中没有，而且超过最大值了，返回null请求丢弃掉
 			HttpProcessor processor = createProcessor();
 			if (processor == null) {
 				try {
@@ -1078,9 +1078,11 @@ public final class HttpConnector implements Connector, Lifecycle, Runnable {
 		started = true;
 
 		// Start our background thread
+		// 调用run方法
 		threadStart();
 
 		// Create the specified minimum number of processors
+		// 将processor入栈
 		while (curProcessors < minProcessors) {
 			if ((maxProcessors > 0) && (curProcessors >= maxProcessors))
 				break;
