@@ -33,6 +33,7 @@ import org.apache.catalina.util.StringManager;
  * @author Craig R. McClanahan
  * @author Remy Maucherat
  * @version $Revision: 1.34 $ $Date: 2002/03/18 07:15:39 $
+ * zhong文测试提交github
  */
 
 public final class HttpConnector implements Connector, Lifecycle, Runnable {
