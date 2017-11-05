@@ -297,6 +297,7 @@ final class HttpProcessor
         // Store the newly available Socket and notify our thread
         this.socket = socket;
         available = true;
+        //assign是connector线程调用的，告诉processor线程，你们不用等了，可以拿socket了
         notifyAll();
 
         if ((debug >= 1) && (socket != null))
@@ -323,8 +324,10 @@ final class HttpProcessor
         }
 
         // Notify the Connector that we have received this Socket
+        //这里使用本地变量为了可以让其他线程同时处理进来的socket而不相互干扰
         Socket socket = this.socket;
         available = false;
+        //这个其实是通知connector线程：你可以继续分配socket给我了
         notifyAll();
 
         if ((debug >= 1) && (socket != null))

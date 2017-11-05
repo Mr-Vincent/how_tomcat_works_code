@@ -928,7 +928,7 @@ public final class HttpConnector implements Connector, Lifecycle, Runnable {
 			}
 
 			// Hand this socket off to an appropriate processor
-			// ÏÈÖĞÕ»ÖĞÈ¡£¬Îª¿Õ¾ÍÖ±½Ó´´½¨£¬ĞÂ´´½¨µÄÌí¼Óµ½createdÕâ¸öÊı¾İ½á¹¹ÖĞ£»Õ»ÖĞÃ»ÓĞ£¬¶øÇÒ³¬¹ı×î´óÖµÁË£¬·µ»ØnullÇëÇó¶ªÆúµô
+			// ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½È¡ï¿½ï¿½Îªï¿½Õ¾ï¿½Ö±ï¿½Ó´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½createdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½İ½á¹¹ï¿½Ğ£ï¿½Õ»ï¿½ï¿½Ã»ï¿½Ğ£ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½nullï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			HttpProcessor processor = createProcessor();
 			if (processor == null) {
 				try {
@@ -1078,14 +1078,15 @@ public final class HttpConnector implements Connector, Lifecycle, Runnable {
 		started = true;
 
 		// Start our background thread
-		// µ÷ÓÃrun·½·¨
+		// ï¿½ï¿½ï¿½ï¿½runï¿½ï¿½ï¿½ï¿½
 		threadStart();
 
 		// Create the specified minimum number of processors
-		// ½«processorÈëÕ»
+		// ï¿½ï¿½processorï¿½ï¿½Õ»
 		while (curProcessors < minProcessors) {
 			if ((maxProcessors > 0) && (curProcessors >= maxProcessors))
 				break;
+			//åˆ›å»ºminProcessors=5ä¸ªprocessor åŒæ—¶å°†å…¶çº¿ç¨‹å¯åŠ¨ ä¸”æ”¾å…¥æ ˆä¸­
 			HttpProcessor processor = newProcessor();
 			recycle(processor);
 		}

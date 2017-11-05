@@ -25,7 +25,7 @@ import org.apache.catalina.Response;
 
 public class SimpleContainer implements Container {
 
-  public static final String WEB_ROOT = "G:/PRIVITE/HowTomcatWorks/webroot";
+  public static final String WEB_ROOT = "/Users/dongwei/HowTomcatWorks/webroot";
 
   public SimpleContainer() {
   }
