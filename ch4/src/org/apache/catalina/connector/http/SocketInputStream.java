@@ -10,7 +10,6 @@ import org.apache.catalina.util.StringManager;
  * header processing.
  *
  * @author <a href="mailto:remm@apache.org">Remy Maucherat</a>
- * @deprecated
  */
 public class SocketInputStream extends InputStream {
 
