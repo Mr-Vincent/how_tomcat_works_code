@@ -22,11 +22,12 @@ import org.apache.catalina.Mapper;
 import org.apache.catalina.Realm;
 import org.apache.catalina.Request;
 import org.apache.catalina.Response;
+import org.apache.logger.Log4jLogger;
 
 public class SimpleContainer implements Container {
 
-  public static final String WEB_ROOT = "G:/PRIVITE/HowTomcatWorks/webroot";
-
+  public static final String WEB_ROOT = "/Users/dongwei/HowTomcatWorks/webroot";
+  private Logger logger;
   public SimpleContainer() {
   }
 
@@ -42,10 +43,11 @@ public class SimpleContainer implements Container {
   }
 
   public Logger getLogger() {
-    return null;
+    return logger;
   }
 
   public void setLogger(Logger logger) {
+	  this.logger = logger; 
   }
 
   public Manager getManager() {
