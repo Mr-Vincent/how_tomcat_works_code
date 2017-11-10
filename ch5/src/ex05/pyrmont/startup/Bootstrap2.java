@@ -13,7 +13,12 @@ import org.apache.catalina.Pipeline;
 import org.apache.catalina.Valve;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.connector.http.HttpConnector;
-
+/**
+ * 使用上下文处理多个servlet
+ * 因为wrapper是最低级的容器，所以只能由高级的容器来对wrapper进行添加
+ * @author dongwei
+ *
+ */
 public final class Bootstrap2 {
   public static void main(String[] args) {
     HttpConnector connector = new HttpConnector();
@@ -24,6 +29,7 @@ public final class Bootstrap2 {
     wrapper2.setName("Modern");
     wrapper2.setServletClass("ModernServlet");
 
+    //使用context容器来添加wrapper子容器
     Context context = new SimpleContext();
     context.addChild(wrapper1);
     context.addChild(wrapper2);

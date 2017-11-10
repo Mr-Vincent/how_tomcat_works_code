@@ -14,7 +14,11 @@ import org.apache.catalina.ValveContext;
 import org.apache.catalina.Contained;
 import org.apache.catalina.Container;
 
-
+/**
+ * 基本阀门
+ * @author dongwei
+ *
+ */
 public class SimpleWrapperValve implements Valve, Contained {
 
   protected Container container;

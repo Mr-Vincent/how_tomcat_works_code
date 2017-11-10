@@ -10,10 +10,14 @@ import org.apache.catalina.Container;
 import org.apache.catalina.Loader;
 import org.apache.catalina.DefaultContext;
 
+/**
+ * 这个实现主要是实现了一个简单的class loader
+ * @author dongwei
+ *
+ */
 public class SimpleLoader implements Loader {
 
-  public static final String WEB_ROOT =
-    System.getProperty("user.dir") + File.separator  + "webroot";
+  public static final String WEB_ROOT = "/Users/dongwei/HowTomcatWorks/webroot";
 
   ClassLoader classLoader = null;
   Container container = null;

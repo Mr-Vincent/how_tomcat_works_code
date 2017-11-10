@@ -9,7 +9,13 @@ import org.apache.catalina.Pipeline;
 import org.apache.catalina.Valve;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.connector.http.HttpConnector;
-
+/**
+ * 这个程序使用的是wrapper来处理servlet，该程序只包括一个servlet
+ * 但是如果要处理多个servlet的话，这个程序就不适用了。
+ * 处理多个servlet就需要另外的容器：上下文 （ApplicationContext）
+ * @author dongwei
+ *
+ */
 public final class Bootstrap1 {
   public static void main(String[] args) {
 

@@ -35,6 +35,7 @@ public class SimpleWrapper implements Wrapper, Pipeline {
   protected Container parent = null;
 
   public SimpleWrapper() {
+	//调用pipeline实例 同时将container set进去了 set的是simplewrapper实例
     pipeline.setBasic(new SimpleWrapperValve());
   }
 

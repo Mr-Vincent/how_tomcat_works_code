@@ -968,6 +968,8 @@ final class HttpProcessor
                 ((HttpServletResponse) response).setHeader
                     ("Date", FastHttpDateFormat.getCurrentDate());
                 if (ok) {
+                	//在这个地方调用servlet的service方法
+                	//本质上的顺序是wrapper(container)#invoke-->pipeline#invoke-->valve#invoke-->servlet#service
                     connector.getContainer().invoke(request, response);
                 }
             } catch (ServletException e) {

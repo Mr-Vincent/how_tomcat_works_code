@@ -33,6 +33,7 @@ public class SimplePipeline implements Pipeline {
 
   public void setBasic(Valve valve) {
     this.basic = valve;
+    //在这里将container set进去 放的是simplewrapper实例
     ((Contained) valve).setContainer(container);
   }
 
