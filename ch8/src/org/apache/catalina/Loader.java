@@ -107,6 +107,7 @@ public interface Loader {
 
     /**
      * Return the Java class loader to be used by this Container.
+     * 这个接口中没有setClassLoader这个接口
      */
     public ClassLoader getClassLoader();
 

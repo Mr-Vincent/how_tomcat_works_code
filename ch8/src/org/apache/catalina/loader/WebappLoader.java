@@ -178,7 +178,7 @@ public class WebappLoader
     /**
      * The debugging detail level for this component.
      */
-    private int debug = 0;
+    private int debug = 3;
 
 
     /**
@@ -302,6 +302,10 @@ public class WebappLoader
 
     /**
      * Return the Java class loader to be used by this Container.
+     * 实现自Loader接口的方法 返回一个加载器
+     * 但是接口中没有setClassLoader，所以没有办法将一个加载器给set进去
+     * 但是这个类中持有变量loaderClass ="org.apache.catalina.loader.WebappClassLoader"
+     * 通过setLoaderClass可以改变加载器，这个类中默认使用的是WebappClassLoader
      */
     public ClassLoader getClassLoader() {
 
@@ -650,6 +654,7 @@ public class WebappLoader
         // Construct a class loader based on our current repositories list
         try {
 
+        	//创建类加载器
             classLoader = createClassLoader();
             classLoader.setResources(container.getResources());
             classLoader.setDebug(this.debug);
@@ -660,9 +665,11 @@ public class WebappLoader
             }
 
             // Configure our repositories
+            // 设置库
             setRepositories();
+            // 设置类路径
             setClassPath();
-
+            // 设置访问权限
             setPermissions();
 
             if (classLoader instanceof Lifecycle)
@@ -838,6 +845,7 @@ public class WebappLoader
 
     /**
      * Notify our Context that a reload is appropriate.
+     * 告诉context可以重新加载了 实际上是调用container.reload()方法
      */
     private void notifyContext() {
 
@@ -1325,6 +1333,7 @@ public class WebappLoader
 
     /**
      * The background thread that checks for session timeouts and shutdown.
+     * 用于自动检测类是否修改过的线程
      */
     public void run() {
 
@@ -1337,11 +1346,14 @@ public class WebappLoader
             // Wait for our check interval
             threadSleep();
 
+            //在生命周期的start()方法中started就为true
             if (!started)
                 break;
 
             try {
                 // Perform our modification check
+            	// No classes have been modified return false
+            	// class没有修改过 返回false
                 if (!classLoader.modified())
                     continue;
             } catch (Exception e) {
@@ -1350,6 +1362,7 @@ public class WebappLoader
             }
 
             // Handle a need for reloading
+            // 只有class被修改过 这段代码才会执行
             notifyContext();
             break;
 
