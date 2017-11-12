@@ -339,6 +339,8 @@ public class SimpleWrapper implements Wrapper, Pipeline, Lifecycle {
 
   // implementation of the Lifecycle interface's methods
   public void addLifecycleListener(LifecycleListener listener) {
+	  //每个组件中都可以添加listener
+	  //lifecycle.addLifecycleListener(listener);
   }
 
   public LifecycleListener[] findLifecycleListeners() {

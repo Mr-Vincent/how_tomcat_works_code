@@ -39,6 +39,7 @@ import org.apache.catalina.deploy.NamingResources;
 import org.apache.catalina.deploy.SecurityConstraint;
 import org.apache.catalina.util.CharsetMapper;
 import org.apache.catalina.util.LifecycleSupport;
+import org.apache.logger.Log4jLogger;
 
 public class SimpleContext implements Context, Pipeline, Lifecycle {
 
@@ -46,6 +47,7 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
     pipeline.setBasic(new SimpleContextValve());
   }
 
+  private Logger logger = Log4jLogger.getInstance();
   protected HashMap children = new HashMap();
   private Loader loader = null;
   protected LifecycleSupport lifecycle = new LifecycleSupport(this);
@@ -505,10 +507,11 @@ public class SimpleContext implements Context, Pipeline, Lifecycle {
   }
 
   public Logger getLogger() {
-    return null;
+    return logger;
   }
 
   public void setLogger(Logger logger) {
+	  this.logger = logger;
   }
 
   public Manager getManager() {

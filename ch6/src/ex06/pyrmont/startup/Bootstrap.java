@@ -1,5 +1,6 @@
 package ex06.pyrmont.startup;
 
+import ex06.pyrmont.core.SimpleConnectorLifecycleListener;
 import ex06.pyrmont.core.SimpleContext;
 import ex06.pyrmont.core.SimpleContextLifecycleListener;
 import ex06.pyrmont.core.SimpleContextMapper;
@@ -17,6 +18,8 @@ import org.apache.catalina.connector.http.HttpConnector;
 public final class Bootstrap {
   public static void main(String[] args) {
     Connector connector = new HttpConnector();
+    //为connector添加一个监听器 addLifecycleListener方法不是Connector的 所以要向上转型
+    ((Lifecycle)connector).addLifecycleListener(new SimpleConnectorLifecycleListener());
     Wrapper wrapper1 = new SimpleWrapper();
     wrapper1.setName("Primitive");
     wrapper1.setServletClass("PrimitiveServlet");
@@ -25,12 +28,15 @@ public final class Bootstrap {
     wrapper2.setServletClass("ModernServlet");
 
     Context context = new SimpleContext();
+    LifecycleListener listener = new SimpleContextLifecycleListener();
+    ((Lifecycle) wrapper1).addLifecycleListener(listener);
+    ((Lifecycle) wrapper2).addLifecycleListener(listener);
     context.addChild(wrapper1);
     context.addChild(wrapper2);
 
     Mapper mapper = new SimpleContextMapper();
     mapper.setProtocol("http");
-    LifecycleListener listener = new SimpleContextLifecycleListener();
+    
     ((Lifecycle) context).addLifecycleListener(listener);
     context.addMapper(mapper);
     Loader loader = new SimpleLoader();
