@@ -102,6 +102,7 @@ import org.apache.catalina.util.LifecycleSupport;
  *
  * @author Craig R. McClanahan
  * @version $Revision: 1.19 $ $Date: 2002/06/09 02:19:43 $
+ * manager的标准实现
  */
 
 public class StandardManager

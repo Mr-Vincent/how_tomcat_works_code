@@ -114,6 +114,7 @@ import org.apache.catalina.util.StringManager;
  * @author Sean Legassick
  * @author <a href="mailto:jon@latchkey.com">Jon S. Stevens</a>
  * @version $Revision: 1.31 $ $Date: 2002/07/23 12:49:11 $
+ * Session的默认实现
  */
 
 class StandardSession
@@ -530,6 +531,7 @@ class StandardSession
     /**
      * Return the <code>HttpSession</code> for which this object
      * is the facade.
+     * 实际上返回的不是standardsession对象，而是它的门面
      */
     public HttpSession getSession() {
 
@@ -607,6 +609,7 @@ class StandardSession
      *
      * @param notify Should we notify listeners about the demise of
      *  this session?
+     *  session 过期
      */
     public void expire(boolean notify) {
 
