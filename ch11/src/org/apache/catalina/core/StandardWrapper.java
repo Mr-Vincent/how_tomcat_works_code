@@ -646,6 +646,7 @@ public final class StandardWrapper
                 synchronized (this) {
                     if (instance == null) {
                         try {
+                        	//如果没有实现SingleThreadModel接口就直接加载
                             instance = loadServlet();
                         } catch (ServletException e) {
                             throw e;
@@ -665,7 +666,7 @@ public final class StandardWrapper
             }
 
         }
-
+        //如果实现了SingleThreadModel接口 从实例池中取出
         synchronized (instancePool) {
 
             while (countAllocated >= nInstances) {
@@ -814,6 +815,7 @@ public final class StandardWrapper
     public synchronized Servlet loadServlet() throws ServletException {
 
         // Nothing to do if we already have an instance or an instance pool
+    	//实例池中有了我们就直接返回
         if (!singleThreadModel && (instance != null))
             return instance;
 
