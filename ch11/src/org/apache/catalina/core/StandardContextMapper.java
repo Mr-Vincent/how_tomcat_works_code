@@ -84,6 +84,7 @@ import org.apache.catalina.util.StringManager;
  *
  * @author Craig R. McClanahan
  * @version $Revision: 1.8 $ $Date: 2002/03/14 20:58:24 $
+ * mapper用来选择wrapper 
  */
 
 public final class StandardContextMapper
@@ -178,6 +179,7 @@ public final class StandardContextMapper
      *
      * @exception IllegalArgumentException if the relative portion of the
      *  path cannot be URL decoded
+     * 返回一个用于处理request的子容器
      */
     public Container map(Request request, boolean update) {
 
@@ -269,6 +271,8 @@ public final class StandardContextMapper
                 context.log("  Trying default match");
             name = context.findServletMapping("/");
             if (name != null)
+            	//这里的find在bootstrap中对应context.addChild(wrapper1)  根据context.addServletMapping("/Primitive", "Primitive")
+            	//获取对应的name 通过name去获取wrapper
                 wrapper = (Wrapper) context.findChild(name);
             if (wrapper != null) {
                 servletPath = relativeURI;

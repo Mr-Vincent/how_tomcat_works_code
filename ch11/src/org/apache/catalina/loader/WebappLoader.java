@@ -326,7 +326,7 @@ public class WebappLoader
 
     /**
      * Set the Container with which this Logger has been associated.
-     *
+     * 设置和这个Loader关联的Container
      * @param container The associated Container
      */
     public void setContainer(Container container) {
@@ -484,6 +484,7 @@ public class WebappLoader
                                    new Boolean(this.reloadable));
 
         // Start or stop our background thread if required
+        // 启动或者停止用于重新加载的后台线程
         if (!started)
             return;
         if (!oldReloadable && this.reloadable)

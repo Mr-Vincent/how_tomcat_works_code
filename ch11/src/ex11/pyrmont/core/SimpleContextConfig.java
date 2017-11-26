@@ -9,8 +9,15 @@ public class SimpleContextConfig implements LifecycleListener {
 
   public void lifecycleEvent(LifecycleEvent event) {
     if (Lifecycle.START_EVENT.equals(event.getType())) {
+    	System.out.println("==============START_EVENT=================");
       Context context = (Context) event.getLifecycle();
       context.setConfigured(true);
+    }else if (Lifecycle.BEFORE_START_EVENT.equals(event.getType())) {
+    	System.out.println("==============BEFORE_START_EVENT=================");
+    } else if(Lifecycle.BEFORE_STOP_EVENT.equals(event.getType())) {
+    	System.out.println("==============BEFORE_STOP_EVENT==================");
+    }else if(Lifecycle.STOP_EVENT.equals(event.getType())) {
+    	System.out.println("==============STOP_EVENT==================");
     }
   }
 }

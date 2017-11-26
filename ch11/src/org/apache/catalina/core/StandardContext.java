@@ -125,6 +125,7 @@ import org.apache.tomcat.util.log.SystemLogHandler;
  * Standard implementation of the <b>Context</b> interface.  Each
  * child container must be a Wrapper implementation to process the
  * requests directed to a particular servlet.
+ * context的默认实现
  *
  * @author Craig R. McClanahan
  * @author Remy Maucherat
@@ -3427,7 +3428,8 @@ public class StandardContext
         if (ok) {
 
             try {
-
+            	
+            	// 传递StandardContextMapper
                 addDefaultMapper(this.mapperClass);
                 started = true;
 

@@ -166,6 +166,7 @@ final class StandardContextValve
         Context context = (Context) getContainer();
 
         // Select the Wrapper to be used for this Request
+        //找合适的包装器
         Wrapper wrapper = null;
         try {
             wrapper = (Wrapper) context.map(request, true);

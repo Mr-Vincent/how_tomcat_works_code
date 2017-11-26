@@ -197,7 +197,7 @@ public abstract class ContainerBase
     /**
      * The debugging detail level for this component.
      */
-    protected int debug = 0;
+    protected int debug = 2;
 
 
     /**
