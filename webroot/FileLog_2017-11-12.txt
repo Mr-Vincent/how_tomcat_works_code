@@ -1,0 +1,51 @@
+2017-11-12 17:38:59 HttpConnector Opening server socket on all host IP addresses
+2017-11-12 17:38:59 HttpConnector[8099] Starting background thread
+2017-11-12 17:38:59 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:38:59 HttpConnector[8099] run: Waiting on serverSocket.accept()
+2017-11-12 17:38:59 HttpProcessor[8099][0] Starting background thread
+2017-11-12 17:38:59 HttpProcessor[8099][0]  Background thread has been started
+2017-11-12 17:38:59 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][0]
+2017-11-12 17:38:59 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:38:59 HttpProcessor[8099][1] Starting background thread
+2017-11-12 17:38:59 HttpProcessor[8099][1]  Background thread has been started
+2017-11-12 17:38:59 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][1]
+2017-11-12 17:38:59 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:38:59 HttpProcessor[8099][2] Starting background thread
+2017-11-12 17:38:59 HttpProcessor[8099][2]  Background thread has been started
+2017-11-12 17:38:59 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][2]
+2017-11-12 17:38:59 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:38:59 HttpProcessor[8099][3] Starting background thread
+2017-11-12 17:38:59 HttpProcessor[8099][3]  Background thread has been started
+2017-11-12 17:38:59 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][3]
+2017-11-12 17:38:59 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:38:59 HttpProcessor[8099][4] Starting background thread
+2017-11-12 17:38:59 HttpProcessor[8099][4]  Background thread has been started
+2017-11-12 17:38:59 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][4]
+2017-11-12 17:38:59 starting Context
+2017-11-12 17:38:59 Context started
+2017-11-12 17:39:25 stopping Context
+2017-11-12 17:39:47 HttpConnector Opening server socket on all host IP addresses
+2017-11-12 17:39:47 HttpConnector[8099] Starting background thread
+2017-11-12 17:39:47 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:39:47 HttpConnector[8099] run: Waiting on serverSocket.accept()
+2017-11-12 17:39:47 HttpProcessor[8099][0] Starting background thread
+2017-11-12 17:39:47 HttpProcessor[8099][0]  Background thread has been started
+2017-11-12 17:39:47 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][0]
+2017-11-12 17:39:47 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:39:47 HttpProcessor[8099][1] Starting background thread
+2017-11-12 17:39:47 HttpProcessor[8099][1]  Background thread has been started
+2017-11-12 17:39:47 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][1]
+2017-11-12 17:39:47 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:39:47 HttpProcessor[8099][2] Starting background thread
+2017-11-12 17:39:47 HttpProcessor[8099][2]  Background thread has been started
+2017-11-12 17:39:47 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][2]
+2017-11-12 17:39:47 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:39:47 HttpProcessor[8099][3] Starting background thread
+2017-11-12 17:39:47 HttpProcessor[8099][3]  Background thread has been started
+2017-11-12 17:39:47 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][3]
+2017-11-12 17:39:47 HttpConnector[8099] newProcessor: Creating new processor
+2017-11-12 17:39:47 HttpProcessor[8099][4] Starting background thread
+2017-11-12 17:39:47 HttpProcessor[8099][4]  Background thread has been started
+2017-11-12 17:39:47 HttpConnector[8099] recycle: Recycling processor HttpProcessor[8099][4]
+2017-11-12 17:39:47 starting Context
+2017-11-12 17:39:47 Context started

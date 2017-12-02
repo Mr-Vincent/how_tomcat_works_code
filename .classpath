@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ch13/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/commons-beanutils.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/commons-daemon.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/commons-digester.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/commons-modeler.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/jaas.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/jakarta-regexp-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/jcert.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/jnet.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/jsse.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/mx4j.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/naming-common.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/naming-factory.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/naming-resources.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/servlet.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/xmlParserAPIs.jar"/>
+	<classpathentry kind="lib" path="/Users/dongwei/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
